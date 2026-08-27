@@ -1,0 +1,24 @@
+{
+  "id": "integration/patch/unprocessable-configuration-not-for-integration",
+  "domain": "integration",
+  "surface": "PATCH /api/intern/integrasjoner/{id}",
+  "description": "Konfigurasjonen finnes, men hører til en annen integrasjon. Andre steg i gruppesekvensen. Forutsetter at Default-gruppen passerer, altså at oppslaget fant en konfigurasjon - ellers ville dette steget aldri blitt nådd.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/integrasjoner/1",
+    "body": {
+      "activeConfigurationId": 200
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation error: ['activeConfigurationId referenced configuration is not for this integration']",
+      "instance": "/api/intern/integrasjoner/1"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "integration/reply/integration-by-id-not-found",
+  "domain": "integration",
+  "contract": "request.integration.by.integration-id",
+  "role": "REPLY",
+  "description": "Ukjent id gir tom payload.",
+  "payload": null
+}

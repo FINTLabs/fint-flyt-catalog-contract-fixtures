@@ -1,0 +1,26 @@
+{
+  "id": "integration/post/unprocessable-missing-fields",
+  "domain": "integration",
+  "surface": "POST /api/intern/integrasjoner",
+  "description": "Manglende påkrevde felter gir 422 med alle feilene samlet i én melding, sortert alfabetisk. Flertallsformen 'Validation errors:' brukes når det er mer enn én.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/integrasjoner",
+    "body": {
+      "sourceApplicationId": null,
+      "sourceApplicationIntegrationId": "",
+      "destination": ""
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation errors: ['destination must not be blank', 'sourceApplicationId must not be null', 'sourceApplicationIntegrationId must not be blank']",
+      "instance": "/api/intern/integrasjoner"
+    }
+  }
+}
