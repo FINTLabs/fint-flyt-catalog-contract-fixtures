@@ -1,0 +1,22 @@
+{
+  "id": "configuration/delete/not-found",
+  "domain": "configuration",
+  "surface": "DELETE /api/intern/konfigurasjoner/{id}",
+  "description": "Sletting av ukjent id gir 404, ikke 204. Endepunktet er ikke idempotent i HTTP-forstand.",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/intern/konfigurasjoner/123"
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 404,
+      "error": "Not Found",
+      "message": "404 NOT_FOUND",
+      "path": "/api/intern/konfigurasjoner/123",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}

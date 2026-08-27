@@ -1,0 +1,43 @@
+{
+  "id": "configuration/history-by-id/ok-without-access-check",
+  "domain": "configuration",
+  "surface": "GET /api/intern/konfigurasjoner/{id}/history",
+  "description": "BEVISST BEVART AVVIK: checkAccess er ikke overstyrt, så basisklassens no-op gjelder. Historikken for en konfigurasjon brukeren ikke er autorisert for returneres med 200, ikke 403. Radene har ikke entityId, og snapshot er uten mapping - mapping-treet er ikke auditert. Dagens produksjonsatferd, bevares gjennom sammenslåingen.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/konfigurasjoner/2/history",
+    "queryParameters": {
+      "page": ["0"],
+      "size": ["20"]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [
+        {
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "CREATED",
+          "actor": {
+            "type": "USER",
+            "oid": "11111111-1111-1111-1111-111111111111"
+          },
+          "actorDisplay": "Kari Nordmann",
+          "snapshot": {
+            "id": 2,
+            "integrationId": 20,
+            "integrationMetadataId": 200,
+            "version": 1,
+            "completed": false,
+            "comment": "Tilhører kildeapplikasjon brukeren IKKE har tilgang til"
+          }
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 1,
+      "totalPages": 1
+    }
+  }
+}

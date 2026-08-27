@@ -1,0 +1,22 @@
+{
+  "id": "configuration/get-by-id/not-found",
+  "domain": "configuration",
+  "surface": "GET /api/intern/konfigurasjoner/{id}",
+  "description": "Ukjent id gir 404 i ApiErrorResponse-format - ikke ProblemDetail, slik value-converting bruker. ResponseStatusException kastes uten reason, så message faller tilbake på exception.message, som er Spring sin egen '404 NOT_FOUND'-streng. Lite informativt, men dagens atferd.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/konfigurasjoner/123"
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 404,
+      "error": "Not Found",
+      "message": "404 NOT_FOUND",
+      "path": "/api/intern/konfigurasjoner/123",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}

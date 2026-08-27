@@ -1,0 +1,25 @@
+{
+  "id": "configuration/patch/forbidden-completed",
+  "domain": "configuration",
+  "surface": "PATCH /api/intern/konfigurasjoner/{id}",
+  "description": "En ferdigstilt konfigurasjon kan ikke endres. 403 med en forklarende melding - i motsetning til 404-tilfellet, som ikke har noen.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/konfigurasjoner/1",
+    "body": {
+      "comment": "Nytt forsøk"
+    }
+  },
+  "expectedResponse": {
+    "status": 403,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 403,
+      "error": "Forbidden",
+      "message": "Configuration is completed, and cannot be altered",
+      "path": "/api/intern/konfigurasjoner/1",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}

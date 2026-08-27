@@ -1,0 +1,8 @@
+{
+  "id": "configuration/reply/configuration-by-id-not-found",
+  "domain": "configuration",
+  "contract": "request.configuration.by.configuration-id",
+  "role": "REPLY",
+  "description": "Ukjent id gir en tom payload - findById returnerer null, og null legges rått på svar-topicet.",
+  "payload": null
+}
