@@ -1,0 +1,8 @@
+{
+  "id": "discovery/request/instance-metadata-by-metadata-id",
+  "domain": "discovery",
+  "contract": "request.instance-metadata.by.metadata-id",
+  "role": "REQUEST",
+  "description": "Requesten er en bar Long. Kontrakten OPPHØRER ved sammenslåingen - configuration-service er eneste klient.",
+  "payload": 1
+}

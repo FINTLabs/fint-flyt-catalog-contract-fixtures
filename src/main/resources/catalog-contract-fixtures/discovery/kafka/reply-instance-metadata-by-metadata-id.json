@@ -1,0 +1,38 @@
+{
+  "id": "discovery/reply/instance-metadata-by-metadata-id",
+  "domain": "discovery",
+  "contract": "request.instance-metadata.by.metadata-id",
+  "role": "REPLY",
+  "description": "Svaret er instansmetadata-treet. Dette er kontrakten configuration-service sin valideringsfabrikk slår opp for å bygge nøkkel-til-type-kartet. BOOLEAN og displayName er med her, men mangler i configuration-service sin kopi av modellen - divergensen som skal samordnes.",
+  "payload": {
+    "instanceValueMetadata": [
+      { "displayName": "Tittel", "type": "STRING", "key": "tittel" },
+      { "displayName": "Er hastesak", "type": "BOOLEAN", "key": "erHastesak" }
+    ],
+    "instanceObjectCollectionMetadata": [
+      {
+        "displayName": "Dokumenter",
+        "key": "dokumenter",
+        "objectMetadata": {
+          "instanceValueMetadata": [
+            { "displayName": "Filnavn", "type": "STRING", "key": "filnavn" }
+          ],
+          "instanceObjectCollectionMetadata": [],
+          "categories": []
+        }
+      }
+    ],
+    "categories": [
+      {
+        "displayName": "Avsender",
+        "content": {
+          "instanceValueMetadata": [
+            { "displayName": "Navn", "type": "STRING", "key": "navn" }
+          ],
+          "instanceObjectCollectionMetadata": [],
+          "categories": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "discovery/instance-metadata-by-id/ok",
+  "domain": "discovery",
+  "surface": "GET /api/intern/metadata/{id}/instans-metadata",
+  "description": "Returnerer instansmetadataen alene, uten integrasjonsmetadataen som omslutter den. Dette er treet konfigurasjonsvalideringen slår opp for å avgjøre hvilke nøkler og typer som finnes. Alle tre verditypene er med - STRING, BOOLEAN og FILE - og BOOLEAN er nettopp den configuration-service mangler i sin kopi av enumen.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/metadata/1/instans-metadata"
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "instanceValueMetadata": [
+        {
+          "displayName": "Tittel",
+          "type": "STRING",
+          "key": "tittel"
+        },
+        {
+          "displayName": "Er hastesak",
+          "type": "BOOLEAN",
+          "key": "erHastesak"
+        },
+        {
+          "displayName": "Vedlegg",
+          "type": "FILE",
+          "key": "vedlegg"
+        }
+      ],
+      "instanceObjectCollectionMetadata": [
+        {
+          "displayName": "Dokumenter",
+          "key": "dokumenter",
+          "objectMetadata": {
+            "instanceValueMetadata": [
+              {
+                "displayName": "Filnavn",
+                "type": "STRING",
+                "key": "filnavn"
+              }
+            ],
+            "instanceObjectCollectionMetadata": [],
+            "categories": []
+          }
+        }
+      ],
+      "categories": [
+        {
+          "displayName": "Avsender",
+          "content": {
+            "instanceValueMetadata": [
+              {
+                "displayName": "Navn",
+                "type": "STRING",
+                "key": "navn"
+              }
+            ],
+            "instanceObjectCollectionMetadata": [],
+            "categories": []
+          }
+        }
+      ]
+    }
+  }
+}
