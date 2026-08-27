@@ -1,0 +1,24 @@
+{
+  "id": "integration/patch/unprocessable-active-without-configuration",
+  "domain": "integration",
+  "surface": "PATCH /api/intern/integrasjoner/{id}",
+  "description": "En integrasjon kan ikke settes ACTIVE uten en aktiv konfigurasjon. Meldingen inneholder skrivefeilen 'is cannot be set to' - propertyPath 'state' settes foran annotasjonens melding, som selv begynner med 'is'. Dagens atferd, fastholdt som den er.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/integrasjoner/1",
+    "body": {
+      "state": "ACTIVE"
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation error: ['state is cannot be set to ACTIVE without an active configuration']",
+      "instance": "/api/intern/integrasjoner/1"
+    }
+  }
+}
