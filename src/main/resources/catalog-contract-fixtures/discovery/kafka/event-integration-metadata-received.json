@@ -1,0 +1,22 @@
+{
+  "id": "discovery/event/integration-metadata-received",
+  "domain": "discovery",
+  "contract": "event.integration-metadata-received",
+  "role": "EVENT",
+  "description": "Den ENESTE hendelsen i katalogdomenet, og den eneste Kafka-kontrakten som skriver framfor å lese. Produsert av acos-gateway og av gateways bygget på gateway-starter; MÅ BESTÅ etter sammenslåingen. Payloaden bæres inn i IntegrationMetadata-entiteten, og instanceMetadata er med nettopp fordi feltet er WRITE_ONLY - lesbart inn, aldri skrevet ut. Fixturen fastholder derfor deserialiseringsretningen, ikke serialiseringen. Trippelen (sourceApplicationId, sourceApplicationIntegrationId, version) er idempotensnøkkelen som bærer cutover-strategien.",
+  "payload": {
+    "sourceApplicationId": 1,
+    "sourceApplicationIntegrationId": "kildeapp-integrasjon",
+    "sourceApplicationIntegrationUri": "https://kildeapp.example/integrasjon/1",
+    "integrationDisplayName": "Byggesak",
+    "version": 1,
+    "instanceMetadata": {
+      "instanceValueMetadata": [
+        { "displayName": "Tittel", "type": "STRING", "key": "tittel" },
+        { "displayName": "Er hastesak", "type": "BOOLEAN", "key": "erHastesak" }
+      ],
+      "instanceObjectCollectionMetadata": [],
+      "categories": []
+    }
+  }
+}

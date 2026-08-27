@@ -1,0 +1,8 @@
+{
+  "id": "discovery/reply/instance-metadata-by-metadata-id-not-found",
+  "domain": "discovery",
+  "contract": "request.instance-metadata.by.metadata-id",
+  "role": "REPLY",
+  "description": "Tom payload både når metadataen ikke finnes og når den finnes uten instansmetadata.",
+  "payload": null
+}
