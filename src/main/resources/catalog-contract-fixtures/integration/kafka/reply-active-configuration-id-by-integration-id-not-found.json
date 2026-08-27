@@ -1,0 +1,8 @@
+{
+  "id": "integration/reply/active-configuration-id-by-integration-id-not-found",
+  "domain": "integration",
+  "contract": "request.active-configuration-id.by.integration-id",
+  "role": "REPLY",
+  "description": "Tom payload når integrasjonen ikke finnes ELLER når den ikke har noen aktiv konfigurasjon. De to tilfellene kan ikke skilles fra hverandre på klientsiden.",
+  "payload": null
+}
