@@ -1,0 +1,47 @@
+{
+  "id": "value-converting/history-by-id/ok-time-filtered",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings/{id}/history",
+  "description": "from og to avgrenser historikken i tid. Parameternavnene er del av kontrakten og bindes fra HistoryFilter.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings/5/history",
+    "queryParameters": {
+      "page": ["1"],
+      "size": ["1"],
+      "from": ["2026-01-01T00:00:00Z"],
+      "to": ["2026-02-01T00:00:00Z"]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [
+        {
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "CREATED",
+          "actor": {
+            "type": "UNKNOWN"
+          },
+          "actorDisplay": null,
+          "snapshot": {
+            "id": 5,
+            "displayName": "Display name",
+            "fromApplicationId": 1,
+            "fromTypeId": "fromType",
+            "toApplicationId": "toAppId",
+            "toTypeId": "toType",
+            "convertingMap": {
+              "A": "B"
+            }
+          }
+        }
+      ],
+      "page": 1,
+      "size": 1,
+      "totalElements": 2,
+      "totalPages": 2
+    }
+  }
+}

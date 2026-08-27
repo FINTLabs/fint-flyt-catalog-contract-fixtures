@@ -1,0 +1,67 @@
+{
+  "id": "value-converting/all-history/ok",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings/history",
+  "description": "Historikk på tvers av alle rader. Radene bærer entityId - i motsetning til /{id}/history - og siden har eksplisitte pagineringsfelter i stedet for Spring sin PageImpl-serialisering. Nyeste revisjon først; sortering kan ikke overstyres.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings/history",
+    "queryParameters": {
+      "page": ["0"],
+      "size": ["20"]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [
+        {
+          "entityId": 1,
+          "timestamp": "2026-02-20T13:30:00Z",
+          "type": "UPDATED",
+          "actor": {
+            "type": "USER",
+            "oid": "22222222-2222-2222-2222-222222222222"
+          },
+          "actorDisplay": "Ola Nordmann",
+          "snapshot": {
+            "id": 1,
+            "displayName": "Updated display name",
+            "fromApplicationId": 1,
+            "fromTypeId": "fromType",
+            "toApplicationId": "toAppId",
+            "toTypeId": "toType",
+            "convertingMap": {
+              "A": "B"
+            }
+          }
+        },
+        {
+          "entityId": 2,
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "CREATED",
+          "actor": {
+            "type": "SYSTEM"
+          },
+          "actorDisplay": "System",
+          "snapshot": {
+            "id": 2,
+            "displayName": "Display name",
+            "fromApplicationId": 1,
+            "fromTypeId": "fromType",
+            "toApplicationId": "toAppId",
+            "toTypeId": "toType",
+            "convertingMap": {
+              "C": "D"
+            }
+          }
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 2,
+      "totalPages": 1
+    }
+  }
+}

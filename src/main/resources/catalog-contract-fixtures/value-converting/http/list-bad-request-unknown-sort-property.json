@@ -1,0 +1,35 @@
+{
+  "id": "value-converting/list/bad-request-unknown-sort-property",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings",
+  "description": "Ukjent sortProperty gir 400, og feilmeldingen ramser opp de lovlige verdiene alfabetisk. Listen er del av kontrakten - frontend viser den til brukeren.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings",
+    "queryParameters": {
+      "page": [
+        "0"
+      ],
+      "size": [
+        "10"
+      ],
+      "sortProperty": [
+        "unknownField"
+      ],
+      "sortDirection": [
+        "ASC"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 400,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Bad Request",
+      "status": 400,
+      "detail": "Validation error: 'sortProperty' must be one of createdAt, createdBy, displayName, fromApplicationId, fromTypeId, id, modifiedAt, modifiedBy, sourceApplicationIds, toApplicationId, toTypeId",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

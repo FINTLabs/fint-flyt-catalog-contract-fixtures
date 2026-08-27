@@ -1,0 +1,35 @@
+{
+  "id": "value-converting/list/bad-request-inverted-created-range",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings",
+  "description": "createdAtFrom etter createdAtTo brytes av en @AssertTrue på klassenivå, som gir meldingen uten feltnavn-prefiks.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings",
+    "queryParameters": {
+      "page": [
+        "0"
+      ],
+      "size": [
+        "10"
+      ],
+      "createdAtFrom": [
+        "2026-02-01T00:00:00Z"
+      ],
+      "createdAtTo": [
+        "2026-01-01T00:00:00Z"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 400,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Bad Request",
+      "status": 400,
+      "detail": "Validation error: createdAtFrom must be before or equal to createdAtTo",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

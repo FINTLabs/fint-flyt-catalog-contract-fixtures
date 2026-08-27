@@ -1,0 +1,31 @@
+{
+  "id": "value-converting/post/forbidden",
+  "domain": "value-converting",
+  "surface": "POST /api/intern/value-convertings",
+  "description": "Tilgangen sjekkes mot fromApplicationId i requesten, før noe lagres.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/value-convertings",
+    "body": {
+      "displayName": "Display name",
+      "fromApplicationId": 1,
+      "fromTypeId": "fromType",
+      "toApplicationId": "toAppId",
+      "toTypeId": "toType",
+      "convertingMap": {
+        "A": "B"
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 403,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Forbidden",
+      "status": 403,
+      "detail": "You do not have permission to access or modify data that is related to source application with id=1",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

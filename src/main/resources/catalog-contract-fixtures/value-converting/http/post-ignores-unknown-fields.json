@@ -1,0 +1,20 @@
+{
+  "id": "value-converting/post/ignores-unknown-fields",
+  "domain": "value-converting",
+  "surface": "POST /api/intern/value-convertings",
+  "description": "Ukjente felter i requesten - inkludert en klient-satt id - ignoreres i stedet for å gi feil. @JsonIgnoreProperties(ignoreUnknown = true) på requesten er en del av kontrakten frontend hviler på.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/value-convertings",
+    "rawBody": "{\"displayName\":\"Display name\",\"fromApplicationId\":1,\"fromTypeId\":\"fromType\",\"toApplicationId\":\"toAppId\",\"toTypeId\":\"toType\",\"convertingMap\":{\"A\":\"B\"},\"id\":999,\"unknownField\":\"ignored\"}"
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "bodyComparison": "LENIENT",
+    "body": {
+      "id": 1,
+      "displayName": "Display name"
+    }
+  }
+}

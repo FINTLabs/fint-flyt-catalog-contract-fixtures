@@ -1,0 +1,29 @@
+{
+  "id": "value-converting/list/bad-request-size-below-minimum",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings",
+  "description": "size må være minst 1. Feilmeldingen gjengir Bean Validation-meldingen ordrett.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings",
+    "queryParameters": {
+      "page": [
+        "0"
+      ],
+      "size": [
+        "0"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 400,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Bad Request",
+      "status": 400,
+      "detail": "Validation error: 'size' must be greater than or equal to 1",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

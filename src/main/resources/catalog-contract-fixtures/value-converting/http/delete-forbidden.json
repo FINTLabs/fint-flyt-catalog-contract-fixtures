@@ -1,0 +1,21 @@
+{
+  "id": "value-converting/delete/forbidden",
+  "domain": "value-converting",
+  "surface": "DELETE /api/intern/value-convertings/{id}",
+  "description": "Manglende tilgang gir 403, og slettingen kjøres ikke.",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/intern/value-convertings/1"
+  },
+  "expectedResponse": {
+    "status": 403,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Forbidden",
+      "status": 403,
+      "detail": "You do not have permission to access or modify data that is related to source application with id=1",
+      "instance": "/api/intern/value-convertings/1"
+    }
+  }
+}
