@@ -1,0 +1,25 @@
+{
+  "id": "integration/post/conflict-already-exists",
+  "domain": "integration",
+  "surface": "POST /api/intern/integrasjoner",
+  "description": "Paret (sourceApplicationId, sourceApplicationIntegrationId) er unikt. Et duplikat gir 409 uten detail - ConflictException bærer ingen reason. Sjekken kjøres FØR autorisasjonssjekken, så et duplikat i en kildeapplikasjon brukeren ikke har tilgang til gir 409, ikke 403.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/integrasjoner",
+    "body": {
+      "sourceApplicationId": 1,
+      "sourceApplicationIntegrationId": "kildeapp-integrasjon",
+      "destination": "arkiv"
+    }
+  },
+  "expectedResponse": {
+    "status": 409,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Conflict",
+      "status": 409,
+      "instance": "/api/intern/integrasjoner"
+    }
+  }
+}
