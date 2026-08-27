@@ -1,0 +1,34 @@
+{
+  "id": "discovery/post/conflict-version-exists",
+  "domain": "discovery",
+  "surface": "POST /api/intern/metadata",
+  "description": "Trippelen (sourceApplicationId, sourceApplicationIntegrationId, version) er unik, håndhevet både her og av en unik constraint i databasen. Et duplikat gir 409 MED detail, i motsetning til integration-domenets 409, som er uten. Denne sjekken kjøres etter autorisasjonssjekken.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/metadata",
+    "body": {
+      "sourceApplicationId": 1,
+      "sourceApplicationIntegrationId": "kildeapp-integrasjon",
+      "integrationDisplayName": "Byggesak",
+      "version": 1,
+      "instanceMetadata": {
+        "instanceValueMetadata": [
+          { "displayName": "Tittel", "type": "STRING", "key": "tittel" }
+        ],
+        "instanceObjectCollectionMetadata": [],
+        "categories": []
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 409,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Conflict",
+      "status": 409,
+      "detail": "Version already exists",
+      "instance": "/api/intern/metadata"
+    }
+  }
+}

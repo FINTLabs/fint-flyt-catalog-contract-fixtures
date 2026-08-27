@@ -1,0 +1,20 @@
+{
+  "id": "discovery/reply/metadata-by-metadata-id",
+  "domain": "discovery",
+  "contract": "request.metadata.by.metadata-id",
+  "role": "REPLY",
+  "description": "Svaret er JPA-entiteten serialisert direkte, og instanceMetadata er IKKE med: feltet er @JsonProperty(WRITE_ONLY), altså lesbart inn men aldri skrevet ut. Klienten som trenger instansmetadataen må bruke request.instance-metadata.by.metadata-id i stedet. id er derimot READ_ONLY og dermed med.",
+  "payload": {
+    "id": 1,
+    "sourceApplicationId": 1,
+    "sourceApplicationIntegrationId": "kildeapp-integrasjon",
+    "sourceApplicationIntegrationUri": "https://kildeapp.example/integrasjon/1",
+    "integrationDisplayName": "Byggesak",
+    "version": 1,
+    "createdAt": "2026-01-15T09:00:00Z",
+    "createdBy": {
+      "type": "USER",
+      "oid": "11111111-1111-1111-1111-111111111111"
+    }
+  }
+}

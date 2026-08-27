@@ -1,0 +1,8 @@
+{
+  "id": "discovery/reply/metadata-by-metadata-id-not-found",
+  "domain": "discovery",
+  "contract": "request.metadata.by.metadata-id",
+  "role": "REPLY",
+  "description": "Ukjent id gir tom payload.",
+  "payload": null
+}
