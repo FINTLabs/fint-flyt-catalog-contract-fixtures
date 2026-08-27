@@ -1,0 +1,61 @@
+{
+  "id": "discovery/metadata-by-integration/ok",
+  "domain": "discovery",
+  "surface": "GET /api/intern/metadata?kildeapplikasjonId&kildeapplikasjonIntegrasjonId",
+  "description": "Med begge id-ene til stede - men UTEN bareSisteVersjoner - rutes requesten hit, og alle versjoner for integrasjonen returneres.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/metadata",
+    "queryParameters": {
+      "kildeapplikasjonId": ["1"],
+      "kildeapplikasjonIntegrasjonId": ["kildeapp-integrasjon"]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": [{
+      "id": 1,
+      "sourceApplicationId": 1,
+      "sourceApplicationIntegrationId": "kildeapp-integrasjon",
+      "sourceApplicationIntegrationUri": "https://kildeapp.example/integrasjon/1",
+      "integrationDisplayName": "Byggesak",
+      "version": 1,
+      "instanceMetadata": {
+        "instanceValueMetadata": [
+          { "displayName": "Tittel", "type": "STRING", "key": "tittel" },
+          { "displayName": "Er hastesak", "type": "BOOLEAN", "key": "erHastesak" },
+          { "displayName": "Vedlegg", "type": "FILE", "key": "vedlegg" }
+        ],
+        "instanceObjectCollectionMetadata": [
+          {
+            "displayName": "Dokumenter",
+            "key": "dokumenter",
+            "objectMetadata": {
+              "instanceValueMetadata": [
+                { "displayName": "Filnavn", "type": "STRING", "key": "filnavn" }
+              ],
+              "instanceObjectCollectionMetadata": [],
+              "categories": []
+            }
+          }
+        ],
+        "categories": [
+          {
+            "displayName": "Avsender",
+            "content": {
+              "instanceValueMetadata": [
+                { "displayName": "Navn", "type": "STRING", "key": "navn" }
+              ],
+              "instanceObjectCollectionMetadata": [],
+              "categories": []
+            }
+          }
+        ]
+      },
+      "createdAt": "2026-01-15T09:00:00Z",
+      "createdBy": "11111111-1111-1111-1111-111111111111",
+      "createdByActor": { "type": "USER", "oid": "11111111-1111-1111-1111-111111111111" }
+    }]
+  }
+}
