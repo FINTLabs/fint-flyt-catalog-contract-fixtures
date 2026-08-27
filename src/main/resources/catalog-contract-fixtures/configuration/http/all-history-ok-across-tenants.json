@@ -1,0 +1,61 @@
+{
+  "id": "configuration/all-history/ok-across-tenants",
+  "domain": "configuration",
+  "surface": "GET /api/intern/konfigurasjoner/history",
+  "description": "BEVISST BEVART AVVIK: ConfigurationHistoryController arver HistoryControllerSupport uten å overstyre additionalFilter. Basisklassen returnerer null der, og et uoverstyrt /history eksponerer derfor endringshistorikk for samtlige rader, på tvers av kildeapplikasjoner. Value-converting overstyrer den og filtrerer. Dagens produksjonsatferd, bevares gjennom sammenslåingen.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/konfigurasjoner/history",
+    "queryParameters": {
+      "page": ["0"],
+      "size": ["20"]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [
+        {
+          "entityId": 1,
+          "timestamp": "2026-02-20T13:30:00Z",
+          "type": "UPDATED",
+          "actor": {
+            "type": "USER",
+            "oid": "22222222-2222-2222-2222-222222222222"
+          },
+          "actorDisplay": "Ola Nordmann",
+          "snapshot": {
+            "id": 1,
+            "integrationId": 10,
+            "integrationMetadataId": 100,
+            "version": 2,
+            "completed": false,
+            "comment": "Tilhører kildeapplikasjon brukeren har tilgang til"
+          }
+        },
+        {
+          "entityId": 2,
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "CREATED",
+          "actor": {
+            "type": "SYSTEM"
+          },
+          "actorDisplay": "System",
+          "snapshot": {
+            "id": 2,
+            "integrationId": 20,
+            "integrationMetadataId": 200,
+            "version": 1,
+            "completed": false,
+            "comment": "Tilhører kildeapplikasjon brukeren IKKE har tilgang til"
+          }
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 2,
+      "totalPages": 1
+    }
+  }
+}

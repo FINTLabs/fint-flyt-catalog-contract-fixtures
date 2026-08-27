@@ -1,0 +1,22 @@
+{
+  "id": "configuration/delete/forbidden-completed",
+  "domain": "configuration",
+  "surface": "DELETE /api/intern/konfigurasjoner/{id}",
+  "description": "En ferdigstilt konfigurasjon kan heller ikke slettes. Samme regel som ved PATCH, håndhevet av samme private hjelpemetode.",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/intern/konfigurasjoner/1"
+  },
+  "expectedResponse": {
+    "status": 403,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 403,
+      "error": "Forbidden",
+      "message": "Configuration is completed, and cannot be altered",
+      "path": "/api/intern/konfigurasjoner/1",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}

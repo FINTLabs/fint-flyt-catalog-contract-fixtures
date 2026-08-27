@@ -19,6 +19,10 @@ object CatalogContractFixtures {
         load<KafkaPayloadFixture>("kafka").groupBy(KafkaPayloadFixture::domain)
     }
 
+    fun httpDomains(): Set<String> = httpFixtures.keys
+
+    fun kafkaDomains(): Set<String> = kafkaFixtures.keys
+
     fun http(domain: String): List<HttpContractFixture> = httpFixtures[domain] ?: throw missingDomain(domain, httpFixtures.keys)
 
     fun http(
