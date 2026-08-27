@@ -1,0 +1,8 @@
+{
+  "id": "configuration/request/configuration-by-id",
+  "domain": "configuration",
+  "contract": "request.configuration.by.configuration-id",
+  "role": "REQUEST",
+  "description": "Requesten er en bar Long. Denne kontrakten OPPHØRER ved sammenslåingen - integration-service er eneste klient, og oppslaget blir internt når begge domenene ligger i samme tjeneste. Fastholdes her fordi den er i bruk fram til steg 3.",
+  "payload": 1
+}
