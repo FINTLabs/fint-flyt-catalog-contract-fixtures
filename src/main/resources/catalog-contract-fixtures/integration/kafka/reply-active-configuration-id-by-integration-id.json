@@ -1,0 +1,8 @@
+{
+  "id": "integration/reply/active-configuration-id-by-integration-id",
+  "domain": "integration",
+  "contract": "request.active-configuration-id.by.integration-id",
+  "role": "REPLY",
+  "description": "Svaret er en bar Long - ikke et objekt som omslutter id-en. Dette er den eneste kontrakten i katalogdomenet der både request og reply er bare verdier.",
+  "payload": 100
+}

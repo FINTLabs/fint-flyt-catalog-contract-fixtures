@@ -1,0 +1,23 @@
+{
+  "id": "integration/patch/not-found",
+  "domain": "integration",
+  "surface": "PATCH /api/intern/integrasjoner/{id}",
+  "description": "Ukjent id gir 404 uten detail, før noe valideres.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/integrasjoner/123",
+    "body": {
+      "destination": "arkiv"
+    }
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Not Found",
+      "status": 404,
+      "instance": "/api/intern/integrasjoner/123"
+    }
+  }
+}

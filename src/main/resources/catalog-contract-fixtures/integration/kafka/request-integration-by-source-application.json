@@ -1,0 +1,11 @@
+{
+  "id": "integration/request/integration-by-source-application",
+  "domain": "integration",
+  "contract": "request.integration.by.source-application-id-and-source-application-integration-id",
+  "role": "REQUEST",
+  "description": "Requesten er et OBJEKT, ikke en bar verdi som de øvrige request/reply-kontraktene i katalogdomenet. Dette er kontrakten med flest klienter - ni gateway-repoer - og den MÅ BESTÅ etter sammenslåingen uten at noen av dem bygges eller deployes på nytt.",
+  "payload": {
+    "sourceApplicationId": 1,
+    "sourceApplicationIntegrationId": "kildeapp-integrasjon"
+  }
+}
