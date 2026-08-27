@@ -1,0 +1,27 @@
+{
+  "id": "configuration/post/unprocessable-single-validation-error",
+  "domain": "configuration",
+  "surface": "POST /api/intern/konfigurasjoner",
+  "description": "Én valideringsfeil gir entall - 'Validation error:' - og feilen er pakket i både enkeltfnutter og hakeparenteser. Formatet kommer fra ValidationErrorsFormattingService og er det frontend viser brukeren.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/konfigurasjoner",
+    "body": {
+      "integrationId": 10,
+      "integrationMetadataId": 100,
+      "completed": false
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 422,
+      "error": "Unprocessable Entity",
+      "message": "Validation error: ['mapping must not be null']",
+      "path": "/api/intern/konfigurasjoner",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}
