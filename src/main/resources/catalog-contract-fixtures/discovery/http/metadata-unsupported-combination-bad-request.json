@@ -1,15 +1,21 @@
 {
   "id": "discovery/metadata-unsupported-combination/bad-request",
   "domain": "discovery",
-  "surface": "GET /api/intern/metadata (ikke-støttet kombinasjon)",
+  "surface": "GET /api/intern/metadata?kildeapplikasjonId&kildeapplikasjonIntegrasjonId&bareSisteVersjoner",
   "description": "Alle tre parametrene samtidig treffer en egen handlermetode som ALLTID svarer 400 med tom body, uten å røre tjenestelaget. Kombinasjonen er altså eksplisitt avvist framfor å falle gjennom til en av de andre variantene. Returtypen på metoden er Collection<IntegrationMetadata>, men den brukes aldri - svaret har ingen body.",
   "request": {
     "method": "GET",
     "path": "/api/intern/metadata",
     "queryParameters": {
-      "kildeapplikasjonId": ["1"],
-      "kildeapplikasjonIntegrasjonId": ["kildeapp-integrasjon"],
-      "bareSisteVersjoner": ["true"]
+      "kildeapplikasjonId": [
+        "1"
+      ],
+      "kildeapplikasjonIntegrasjonId": [
+        "kildeapp-integrasjon"
+      ],
+      "bareSisteVersjoner": [
+        "true"
+      ]
     }
   },
   "expectedResponse": {
