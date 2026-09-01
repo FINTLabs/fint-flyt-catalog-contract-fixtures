@@ -2,12 +2,14 @@
   "id": "integration/list/forbidden-unauthorized-source-application",
   "domain": "integration",
   "surface": "GET /api/intern/integrasjoner",
-  "description": "Ber brukeren eksplisitt om en kildeapplikasjon vedkommende ikke er autorisert for, svarer flaten 403 UTEN body. ForbiddenWithoutBodyException er en ResponseStatusException uten reason, og GlobalExceptionHandler faller da tilbake på ProblemDetail.forStatus, som ikke setter detail. Merk kontrasten: uten sourceApplicationId filtreres listen stille i stedet for å avvise.",
+  "description": "Ber brukeren eksplisitt om en kildeapplikasjon vedkommende ikke er autorisert for, svarer flaten 403 uten detail. ForbiddenWithoutBodyException er en ResponseStatusException uten reason, og GlobalExceptionHandler faller da tilbake på ProblemDetail.forStatus, som ikke setter detail - men responsen har fortsatt en body. Klassenavnet lover mer enn det holder. Merk kontrasten: uten sourceApplicationId filtreres listen stille i stedet for å avvise.",
   "request": {
     "method": "GET",
     "path": "/api/intern/integrasjoner",
     "queryParameters": {
-      "sourceApplicationId": ["99"]
+      "sourceApplicationId": [
+        "99"
+      ]
     }
   },
   "expectedResponse": {

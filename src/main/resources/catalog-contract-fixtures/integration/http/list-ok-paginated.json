@@ -1,16 +1,24 @@
 {
   "id": "integration/list/ok-paginated",
   "domain": "integration",
-  "surface": "GET /api/intern/integrasjoner (paginert)",
+  "surface": "GET /api/intern/integrasjoner?side&antall&sorteringFelt&sorteringRetning",
   "description": "Med alle fire pagineringsparametrene til stede rutes requesten til den paginerte varianten, som pakker resultatet i content/totalElements/totalPages. Parameternavnene er norske, som i configuration-domenet.",
   "request": {
     "method": "GET",
     "path": "/api/intern/integrasjoner",
     "queryParameters": {
-      "side": ["0"],
-      "antall": ["20"],
-      "sorteringFelt": ["id"],
-      "sorteringRetning": ["ASC"]
+      "side": [
+        "0"
+      ],
+      "antall": [
+        "20"
+      ],
+      "sorteringFelt": [
+        "id"
+      ],
+      "sorteringRetning": [
+        "ASC"
+      ]
     }
   },
   "expectedResponse": {
