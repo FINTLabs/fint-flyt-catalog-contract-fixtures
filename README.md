@@ -126,6 +126,11 @@ Filnavnet er fritt; `id` er identiteten, og den må være unik på tvers av hele
 | `expectedResponse.bodyComparison` | `STRICT` (default), `LENIENT` eller `NONE`                                                                          |
 | `expectedResponse.ignoredPaths`   | JSONPath-uttrykk som fjernes fra både forventet og faktisk body før sammenligning                                   |
 
+Deler flere handler-metoder samme path og diskrimineres på query-parametre, skal `surface`
+skille dem på nettopp de parametrene — `GET /api/intern/metadata?kildeapplikasjonIds`, ikke en
+fritekstbeskrivelse. Varianter som svarer med ulik form er ulike flater, ikke ulike tilfeller av
+samme flate, og `surface` skal kunne brukes til å isolere én av dem.
+
 `STRICT` betyr at ekstra felter i responsen er et kontraktsbrudd, og at rekkefølgen i lister er
 bindende. Det er default fordi et nytt felt i den nye tjenesten *er* en endring frontend kan se.
 
