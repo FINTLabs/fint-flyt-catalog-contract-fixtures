@@ -128,12 +128,17 @@ Filnavnet er fritt; `id` er identiteten, og den må være unik på tvers av hele
 
 `STRICT` betyr at ekstra felter i responsen er et kontraktsbrudd, og at rekkefølgen i lister er
 bindende. Det er default fordi et nytt felt i den nye tjenesten *er* en endring frontend kan se.
-Bruk `LENIENT` bare der tilfellet handler om noe annet enn responsformen — for eksempel at ukjente
-felter i requesten ignoreres.
 
-`ignoredPaths` er for verdier som ikke kan kontrolleres fra testen, typisk tidsstempler generert ved
-kjøring. Bruk det sparsomt: en ignorert sti er et hull i kontraktsdekningen. Der testen kan
-kontrollere verdien, skal den heller gjøre det.
+**Unngå `LENIENT`.** Den betyr «ignorer alt jeg ikke nevnte», og skjuler dermed nøyaktig det
+fixturene finnes for å fange: felter som forsvinner, endrer form eller kommer til. Fristelsen er å
+bruke den når tilfellet «handler om noe annet enn responsformen» — men også da er responsen en
+kontrakt, og et tilfelle som ikke sier hva den skal være, dekker mindre enn det ser ut til. Ingen
+fixture i settet bruker `LENIENT` i dag.
+
+Trenger du å slippe unna en enkeltverdi, bruk `ignoredPaths` framfor `LENIENT`: den er presis om hva
+som ikke sjekkes, mens resten av bodyen fortsatt holdes STRICT. Det er for verdier testen ikke kan
+kontrollere, typisk tidsstempler generert ved kjøring. Bruk det sparsomt — en ignorert sti er et hull
+i kontraktsdekningen, og der testen kan kontrollere verdien, skal den heller gjøre det.
 
 Utelates `expectedResponse.body`, kreves tom responsbody — det er slik `204 No Content` uttrykkes.
 
