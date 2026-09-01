@@ -63,6 +63,7 @@ dependencies {
 
     api("com.fasterxml.jackson.core:jackson-databind")
     api("com.fasterxml.jackson.module:jackson-module-kotlin")
+    api("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
     api("org.springframework:spring-core")
     api("org.springframework:spring-test")
     api("org.springframework:spring-web")
