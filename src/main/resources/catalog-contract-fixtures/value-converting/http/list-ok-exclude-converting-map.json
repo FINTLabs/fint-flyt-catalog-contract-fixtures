@@ -2,14 +2,20 @@
   "id": "value-converting/list/ok-exclude-converting-map",
   "domain": "value-converting",
   "surface": "GET /api/intern/value-convertings",
-  "description": "excludeConvertingMap=true utelater convertingMap HELT fra responsen - feltet er ikke null, det er borte. Det følger av @JsonInclude(NON_NULL) på feltet, og er formen frontend forholder seg til i listevisningen.",
+  "description": "excludeConvertingMap=true utelater convertingMap HELT fra radene i content - feltet er ikke null, det er borte. Det følger av @JsonInclude(NON_NULL). Page-konvolutten er uendret. Formen kom med FFS-2078: flaten svarte tidligere med bare content. Merk at pageable-feltene leses direkte fra Pageable, så en unpaged side kaster - siden må være paged.",
   "request": {
     "method": "GET",
     "path": "/api/intern/value-convertings",
     "queryParameters": {
-      "page": ["0"],
-      "size": ["20"],
-      "excludeConvertingMap": ["true"]
+      "page": [
+        "0"
+      ],
+      "size": [
+        "20"
+      ],
+      "excludeConvertingMap": [
+        "true"
+      ]
     }
   },
   "expectedResponse": {
@@ -37,7 +43,32 @@
             "oid": "22222222-2222-2222-2222-222222222222"
           }
         }
-      ]
+      ],
+      "pageable": {
+        "pageNumber": 0,
+        "pageSize": 20,
+        "offset": 0,
+        "sort": {
+          "empty": false,
+          "sorted": true,
+          "unsorted": false
+        },
+        "paged": true,
+        "unpaged": false
+      },
+      "last": true,
+      "totalPages": 1,
+      "totalElements": 1,
+      "first": true,
+      "size": 20,
+      "number": 0,
+      "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+      },
+      "numberOfElements": 1,
+      "empty": false
     }
   }
 }

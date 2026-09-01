@@ -2,13 +2,17 @@
   "id": "value-converting/list/ok-default-sort",
   "domain": "value-converting",
   "surface": "GET /api/intern/value-convertings",
-  "description": "Paginert liste uten sorteringsparametre. Responsen har kun 'content' - ingen pagineringsfelter - og convertingMap er med, fordi excludeConvertingMap defaulter til false.",
+  "description": "Paginert liste uten sorteringsparametre. Responsen er hele Spring Data sin page-form: content pluss pageable, sorterings- og posisjonsfelter. convertingMap er med, fordi excludeConvertingMap defaulter til false. Formen kom med FFS-2078: flaten svarte tidligere med bare content. Merk at pageable-feltene leses direkte fra Pageable, så en unpaged side kaster - siden må være paged.",
   "request": {
     "method": "GET",
     "path": "/api/intern/value-convertings",
     "queryParameters": {
-      "page": ["0"],
-      "size": ["20"]
+      "page": [
+        "0"
+      ],
+      "size": [
+        "20"
+      ]
     }
   },
   "expectedResponse": {
@@ -39,7 +43,32 @@
             "oid": "22222222-2222-2222-2222-222222222222"
           }
         }
-      ]
+      ],
+      "pageable": {
+        "pageNumber": 0,
+        "pageSize": 20,
+        "offset": 0,
+        "sort": {
+          "empty": false,
+          "sorted": true,
+          "unsorted": false
+        },
+        "paged": true,
+        "unpaged": false
+      },
+      "last": true,
+      "totalPages": 1,
+      "totalElements": 1,
+      "first": true,
+      "size": 20,
+      "number": 0,
+      "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+      },
+      "numberOfElements": 1,
+      "empty": false
     }
   }
 }
