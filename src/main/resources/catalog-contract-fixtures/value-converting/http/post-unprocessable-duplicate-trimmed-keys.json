@@ -1,0 +1,32 @@
+{
+  "id": "value-converting/post/unprocessable-duplicate-trimmed-keys",
+  "domain": "value-converting",
+  "surface": "POST /api/intern/value-convertings",
+  "description": "Nøkler i convertingMap trimmes før lagring. To nøkler som blir like etter trimming avvises med 422 fra tjenestelaget.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/value-convertings",
+    "body": {
+      "displayName": "Display name",
+      "fromApplicationId": 1,
+      "fromTypeId": "fromType",
+      "toApplicationId": "toAppId",
+      "toTypeId": "toType",
+      "convertingMap": {
+        "A ": "B",
+        " A": "C"
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation error: convertingMap contains duplicate keys after trimming",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

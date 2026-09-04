@@ -1,0 +1,25 @@
+{
+  "id": "value-converting/all-history/ok-empty",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings/history",
+  "description": "Tom historikk gir 200 med tom content-liste og utfylte pagineringsfelter - ikke 404. Fastholder at pagineringsfeltene finnes også når det ikke er noe innhold.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings/history",
+    "queryParameters": {
+      "page": ["0"],
+      "size": ["20"]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [],
+      "page": 0,
+      "size": 20,
+      "totalElements": 0,
+      "totalPages": 0
+    }
+  }
+}

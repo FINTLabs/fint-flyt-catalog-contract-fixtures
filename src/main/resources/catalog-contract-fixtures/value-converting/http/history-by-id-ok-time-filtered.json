@@ -1,0 +1,55 @@
+{
+  "id": "value-converting/history-by-id/ok-time-filtered",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings/{id}/history",
+  "description": "from og to avgrenser historikken i tid. Parameternavnene er del av kontrakten og bindes fra HistoryFilter. Den ufiltrerte historikken for samme id har to revisjoner; DELETED-revisjonen fra 2026-03-01 faller utenfor to, så bare CREATED er igjen - og totalElements er 1, ikke 2. Paginering dekkes av history-by-id/ok-paginated, som ikke filtrerer på tid.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings/5/history",
+    "queryParameters": {
+      "page": [
+        "0"
+      ],
+      "size": [
+        "20"
+      ],
+      "from": [
+        "2026-01-01T00:00:00Z"
+      ],
+      "to": [
+        "2026-02-01T00:00:00Z"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [
+        {
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "CREATED",
+          "actor": {
+            "type": "UNKNOWN"
+          },
+          "actorDisplay": null,
+          "snapshot": {
+            "id": 5,
+            "displayName": "Display name",
+            "fromApplicationId": 1,
+            "fromTypeId": "fromType",
+            "toApplicationId": "toAppId",
+            "toTypeId": "toType",
+            "convertingMap": {
+              "A": "B"
+            }
+          }
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 1,
+      "totalPages": 1
+    }
+  }
+}
