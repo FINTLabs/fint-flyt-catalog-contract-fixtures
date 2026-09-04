@@ -1,0 +1,38 @@
+{
+  "id": "configuration/post/unprocessable-integration-not-found",
+  "domain": "configuration",
+  "surface": "POST /api/intern/konfigurasjoner",
+  "description": "Valideringen slår opp integrasjonen over Kafka. Finnes den ikke, kastes CouldNotFindIntegrationException, som mappes til 422 av en egen handler - ikke til 404, slik et manglende oppslag ellers ville tilsi.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/konfigurasjoner",
+    "body": {
+      "integrationId": 999,
+      "integrationMetadataId": 100,
+      "completed": false,
+      "mapping": {
+        "valueMappingPerKey": {
+          "tittel": {
+            "type": "STRING",
+            "mappingString": "Sakstittel"
+          }
+        },
+        "valueCollectionMappingPerKey": {},
+        "objectMappingPerKey": {},
+        "objectCollectionMappingPerKey": {}
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 422,
+      "error": "Unprocessable Entity",
+      "message": "Could not find integration with id=999",
+      "path": "/api/intern/konfigurasjoner",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}
