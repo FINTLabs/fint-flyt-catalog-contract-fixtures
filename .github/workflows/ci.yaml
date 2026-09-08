@@ -1,0 +1,11 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: FINTLabs/fint-flyt-github-workflows/.github/workflows/java-library-ci.yaml@main

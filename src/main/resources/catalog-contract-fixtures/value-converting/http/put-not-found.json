@@ -1,0 +1,31 @@
+{
+  "id": "value-converting/put/not-found",
+  "domain": "value-converting",
+  "surface": "PUT /api/intern/value-convertings/{id}",
+  "description": "Ukjent id gir 404 før noe oppdateres. PUT oppretter ikke ressursen - endepunktet er ikke idempotent-skapende.",
+  "request": {
+    "method": "PUT",
+    "path": "/api/intern/value-convertings/123",
+    "body": {
+      "displayName": "Display name",
+      "fromApplicationId": 1,
+      "fromTypeId": "fromType",
+      "toApplicationId": "toAppId",
+      "toTypeId": "toType",
+      "convertingMap": {
+        "A": "B"
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Not Found",
+      "status": 404,
+      "detail": "Value conversion with id=123 was not found",
+      "instance": "/api/intern/value-convertings/123"
+    }
+  }
+}

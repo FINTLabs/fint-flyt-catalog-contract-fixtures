@@ -1,0 +1,22 @@
+{
+  "id": "value-converting/post/unprocessable-missing-display-name",
+  "domain": "value-converting",
+  "surface": "POST /api/intern/value-convertings",
+  "description": "Manglende påkrevd felt gir 422, ikke 400, fordi Jackson feiler før Bean Validation. Det avvikende anførselstegn-plasseringen i meldingen ('displayName is required' i stedet for 'displayName' is required) er dagens atferd og fastholdes.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/value-convertings",
+    "rawBody": "{\"fromApplicationId\":1,\"fromTypeId\":\"fromType\",\"toApplicationId\":\"toAppId\",\"toTypeId\":\"toType\",\"convertingMap\":{\"A\":\"B\"}}"
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation error: 'displayName is required'",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

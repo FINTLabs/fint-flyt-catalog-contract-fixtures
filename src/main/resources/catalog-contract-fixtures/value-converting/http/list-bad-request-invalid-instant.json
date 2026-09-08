@@ -1,0 +1,32 @@
+{
+  "id": "value-converting/list/bad-request-invalid-instant",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings",
+  "description": "Et tidsparameter som ikke lar seg tolke som Instant gir en bindingsfeil, ikke en valideringsfeil, og dermed en annen feilmeldingsform.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings",
+    "queryParameters": {
+      "page": [
+        "0"
+      ],
+      "size": [
+        "10"
+      ],
+      "createdAtFrom": [
+        "not-an-instant"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 400,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Bad Request",
+      "status": 400,
+      "detail": "Invalid value for request parameter 'createdAtFrom'",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

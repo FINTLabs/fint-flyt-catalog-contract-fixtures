@@ -1,0 +1,26 @@
+{
+  "id": "value-converting/list/bad-request-missing-page",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings",
+  "description": "page er påkrevd. Manglende page gir 400 med ProblemDetail, og hverken autorisasjons- eller tjenestelaget røres.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings",
+    "queryParameters": {
+      "size": [
+        "10"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 400,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Bad Request",
+      "status": 400,
+      "detail": "Validation error: 'page' is required",
+      "instance": "/api/intern/value-convertings"
+    }
+  }
+}

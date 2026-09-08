@@ -1,0 +1,8 @@
+{
+  "id": "value-converting/request/value-converting-by-id",
+  "domain": "value-converting",
+  "contract": "request.value-converting.by.value-converting-id",
+  "role": "REQUEST",
+  "description": "Requesten er en bar Long - value-converting-id - ikke et objekt. mapping-service er eneste klient.",
+  "payload": 1
+}

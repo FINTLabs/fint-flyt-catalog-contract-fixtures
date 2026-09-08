@@ -1,0 +1,21 @@
+{
+  "id": "value-converting/delete/not-found",
+  "domain": "value-converting",
+  "surface": "DELETE /api/intern/value-convertings/{id}",
+  "description": "Sletting av ukjent id gir 404, ikke 204. Endepunktet er altså ikke idempotent i HTTP-forstand - dagens atferd, fastholdt som den er.",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/intern/value-convertings/123"
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Not Found",
+      "status": 404,
+      "detail": "Value conversion with id=123 was not found",
+      "instance": "/api/intern/value-convertings/123"
+    }
+  }
+}

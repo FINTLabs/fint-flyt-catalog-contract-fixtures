@@ -1,0 +1,8 @@
+{
+  "id": "value-converting/reply/value-converting-by-id-not-found",
+  "domain": "value-converting",
+  "contract": "request.value-converting.by.value-converting-id",
+  "role": "REPLY",
+  "description": "Ukjent id gir en tom payload - findById(...).orElse(null) legges rått på svar-topicet. Klienten må tåle null; det er ingen feilmelding eller innpakning.",
+  "payload": null
+}

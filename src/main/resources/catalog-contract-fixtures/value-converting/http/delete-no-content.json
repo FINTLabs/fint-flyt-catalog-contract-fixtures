@@ -1,0 +1,13 @@
+{
+  "id": "value-converting/delete/no-content",
+  "domain": "value-converting",
+  "surface": "DELETE /api/intern/value-convertings/{id}",
+  "description": "Sletting svarer 204 med tom body.",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/intern/value-convertings/1"
+  },
+  "expectedResponse": {
+    "status": 204
+  }
+}

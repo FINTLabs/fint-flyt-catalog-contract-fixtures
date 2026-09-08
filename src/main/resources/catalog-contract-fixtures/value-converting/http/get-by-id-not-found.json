@@ -1,0 +1,21 @@
+{
+  "id": "value-converting/get-by-id/not-found",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings/{id}",
+  "description": "Ukjent id gir 404. Feilmeldingen inneholder id-en, og tilgangskontrollen kjøres ikke - den forutsetter at raden finnes.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings/123"
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Not Found",
+      "status": 404,
+      "detail": "Value conversion with id=123 was not found",
+      "instance": "/api/intern/value-convertings/123"
+    }
+  }
+}

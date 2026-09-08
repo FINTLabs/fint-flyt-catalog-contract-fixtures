@@ -1,0 +1,49 @@
+{
+  "id": "value-converting/history-by-id/ok-paginated",
+  "domain": "value-converting",
+  "surface": "GET /api/intern/value-convertings/{id}/history",
+  "description": "page og size bindes fra Pageable, med @PageableDefault(size = 20) i basisklassen. size=1 gir én revisjon per side, og page=1 henter den andre - den eldste, siden nyeste revisjon kommer først. Uten tidsfilter er begge revisjonene med i totalene.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/value-convertings/5/history",
+    "queryParameters": {
+      "page": [
+        "1"
+      ],
+      "size": [
+        "1"
+      ]
+    }
+  },
+  "expectedResponse": {
+    "status": 200,
+    "contentType": "application/json",
+    "body": {
+      "content": [
+        {
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "CREATED",
+          "actor": {
+            "type": "UNKNOWN"
+          },
+          "actorDisplay": null,
+          "snapshot": {
+            "id": 5,
+            "displayName": "Display name",
+            "fromApplicationId": 1,
+            "fromTypeId": "fromType",
+            "toApplicationId": "toAppId",
+            "toTypeId": "toType",
+            "convertingMap": {
+              "A": "B"
+            }
+          }
+        }
+      ],
+      "page": 1,
+      "size": 1,
+      "totalElements": 2,
+      "totalPages": 2
+    }
+  }
+}
