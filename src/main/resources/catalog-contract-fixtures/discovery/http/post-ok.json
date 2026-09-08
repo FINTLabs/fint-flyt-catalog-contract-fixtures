@@ -1,0 +1,27 @@
+{
+  "id": "discovery/post/ok",
+  "domain": "discovery",
+  "surface": "POST /api/intern/metadata",
+  "description": "Brukes av gateways bygget på flyt-web-instance-gateway, ikke av frontend. Svarer 200 med TOM body - den lagrede metadataen returneres ikke, så klienten får hverken id eller createdAt tilbake.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/metadata",
+    "body": {
+      "sourceApplicationId": 1,
+      "sourceApplicationIntegrationId": "kildeapp-integrasjon",
+      "sourceApplicationIntegrationUri": "https://kildeapp.example/integrasjon/1",
+      "integrationDisplayName": "Byggesak",
+      "version": 1,
+      "instanceMetadata": {
+        "instanceValueMetadata": [
+          { "displayName": "Tittel", "type": "STRING", "key": "tittel" }
+        ],
+        "instanceObjectCollectionMetadata": [],
+        "categories": []
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 200
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "discovery/post/unprocessable-validation-errors",
+  "domain": "discovery",
+  "surface": "POST /api/intern/metadata",
+  "description": "Valideringen kjøres FØR autorisasjonssjekken, så en ugyldig payload gir 422 uansett om klienten har tilgang til kildeapplikasjonen. Feilene samles og sorteres alfabetisk, med flertallsformen når det er mer enn én.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/metadata",
+    "body": {
+      "sourceApplicationId": 1,
+      "sourceApplicationIntegrationId": "",
+      "integrationDisplayName": "",
+      "version": null,
+      "instanceMetadata": {
+        "instanceValueMetadata": [],
+        "instanceObjectCollectionMetadata": [],
+        "categories": []
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation errors: ['integrationDisplayName must not be blank', 'sourceApplicationIntegrationId must not be blank', 'version must not be null']",
+      "instance": "/api/intern/metadata"
+    }
+  }
+}

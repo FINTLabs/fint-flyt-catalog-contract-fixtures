@@ -1,0 +1,20 @@
+{
+  "id": "discovery/instance-metadata-by-id/not-found",
+  "domain": "discovery",
+  "surface": "GET /api/intern/metadata/{id}/instans-metadata",
+  "description": "Ukjent id gir 404 uten detail - ResponseStatusException kastes uten reason. Tilgangssjekken kjøres etter oppslaget, så eksistens lekker gjennom statuskoden: 403 for metadata som finnes, 404 for metadata som ikke gjør det.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/metadata/123/instans-metadata"
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Not Found",
+      "status": 404,
+      "instance": "/api/intern/metadata/123/instans-metadata"
+    }
+  }
+}
