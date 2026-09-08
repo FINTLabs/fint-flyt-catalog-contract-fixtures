@@ -24,14 +24,15 @@ plugins {
     id("java-library")
     id("io.github.ben-manes.versions") version "0.61.0"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
-    kotlin("jvm") version "2.4.10"
+    kotlin("jvm") version "2.4.20"
 }
 
-private val kotlinVersion = "2.4.10"
+private val kotlinVersion = "2.4.20"
 extra["kotlin.version"] = kotlinVersion
 extra["commons-lang3.version"] = "3.18.0"
 extra["jackson-bom.version"] = "2.22.2"
 extra["log4j2.version"] = "2.26.1"
+extra["tomcat.version"] = "10.1.59"
 
 group = "no.novari"
 version = findProperty("version")?.toString() ?: "1.0-SNAPSHOT"
@@ -124,5 +125,13 @@ fun isNonStable(version: String): Boolean {
 tasks.named<DependencyUpdatesTask>("dependencyUpdates") {
     rejectVersionIf {
         isNonStable(candidate.version)
+    }
+}
+
+configurations.named("ktlint") {
+    resolutionStrategy.eachDependency {
+        if (requested.group == "org.jetbrains.kotlin") {
+            useVersion("2.2.21")
+        }
     }
 }
