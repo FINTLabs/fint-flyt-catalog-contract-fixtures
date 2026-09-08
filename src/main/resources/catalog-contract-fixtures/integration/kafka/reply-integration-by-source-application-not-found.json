@@ -1,0 +1,8 @@
+{
+  "id": "integration/reply/integration-by-source-application-not-found",
+  "domain": "integration",
+  "contract": "request.integration.by.source-application-id-and-source-application-integration-id",
+  "role": "REPLY",
+  "description": "Tom payload både når integrasjonen ikke finnes OG når requesten mangler et av de to feltene - handleren returnerer null i begge tilfeller uten å skille dem. Ni gateway-repoer må tåle det.",
+  "payload": null
+}

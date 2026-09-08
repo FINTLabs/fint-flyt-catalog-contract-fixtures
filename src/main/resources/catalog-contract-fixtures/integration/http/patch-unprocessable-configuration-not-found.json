@@ -1,0 +1,24 @@
+{
+  "id": "integration/patch/unprocessable-configuration-not-found",
+  "domain": "integration",
+  "surface": "PATCH /api/intern/integrasjoner/{id}",
+  "description": "Den refererte konfigurasjonen slås opp over Kafka. Finnes den ikke, gir det 422 - og fordi ActiveConfigurationIsDefinedIfStateIsActive validerer mot den SAMME oppslagsverdien, feiler begge constraintene samtidig når integrasjonen er aktiv. Begge ligger i Default-gruppen; gruppesekvensen på IntegrationDto skiller bare ut IsForIntegration og IsComplete som senere steg. Meldingen er derfor i flertall, med feilene sortert alfabetisk.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/integrasjoner/1",
+    "body": {
+      "activeConfigurationId": 999
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation errors: ['activeConfigurationId referenced configuration could not be found', 'state is cannot be set to ACTIVE without an active configuration']",
+      "instance": "/api/intern/integrasjoner/1"
+    }
+  }
+}

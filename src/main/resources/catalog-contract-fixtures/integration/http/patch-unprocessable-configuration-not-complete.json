@@ -1,0 +1,24 @@
+{
+  "id": "integration/patch/unprocessable-configuration-not-complete",
+  "domain": "integration",
+  "surface": "PATCH /api/intern/integrasjoner/{id}",
+  "description": "Konfigurasjonen finnes og hører til integrasjonen, men er ikke ferdigstilt. Tredje og siste steg i gruppesekvensen. Siste steg i sekvensen, og nås bare når de to foregående passerer.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/integrasjoner/1",
+    "body": {
+      "activeConfigurationId": 300
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Unprocessable Entity",
+      "status": 422,
+      "detail": "Validation error: ['activeConfigurationId referenced configuration is not complete']",
+      "instance": "/api/intern/integrasjoner/1"
+    }
+  }
+}

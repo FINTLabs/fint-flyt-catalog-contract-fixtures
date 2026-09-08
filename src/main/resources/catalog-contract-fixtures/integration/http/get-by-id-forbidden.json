@@ -1,0 +1,21 @@
+{
+  "id": "integration/get-by-id/forbidden",
+  "domain": "integration",
+  "surface": "GET /api/intern/integrasjoner/{id}",
+  "description": "Integrasjonen finnes, men brukeren har ikke tilgang til kildeapplikasjonen. Tilgangssjekken gjøres etter oppslaget, så eksistensen lekker gjennom statuskoden: 403 for en integrasjon som finnes, 404 for en som ikke gjør det.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/integrasjoner/1"
+  },
+  "expectedResponse": {
+    "status": 403,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Forbidden",
+      "status": 403,
+      "detail": "You do not have permission to access or modify data that is related to source application with id=1",
+      "instance": "/api/intern/integrasjoner/1"
+    }
+  }
+}

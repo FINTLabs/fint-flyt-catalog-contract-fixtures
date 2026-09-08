@@ -1,0 +1,20 @@
+{
+  "id": "integration/get-by-id/not-found",
+  "domain": "integration",
+  "surface": "GET /api/intern/integrasjoner/{id}",
+  "description": "Ukjent id gir 404 uten detail-felt. NotFoundException bærer ingen reason, så ProblemDetail får bare type, title, status og instance. Value-converting svarer med en forklarende detail på samme situasjon.",
+  "request": {
+    "method": "GET",
+    "path": "/api/intern/integrasjoner/123"
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "about:blank",
+      "title": "Not Found",
+      "status": 404,
+      "instance": "/api/intern/integrasjoner/123"
+    }
+  }
+}
