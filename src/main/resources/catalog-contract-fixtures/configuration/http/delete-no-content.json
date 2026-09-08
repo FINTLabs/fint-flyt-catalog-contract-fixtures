@@ -1,0 +1,13 @@
+{
+  "id": "configuration/delete/no-content",
+  "domain": "configuration",
+  "surface": "DELETE /api/intern/konfigurasjoner/{id}",
+  "description": "Sletting svarer 204 med tom body.",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/intern/konfigurasjoner/1"
+  },
+  "expectedResponse": {
+    "status": 204
+  }
+}

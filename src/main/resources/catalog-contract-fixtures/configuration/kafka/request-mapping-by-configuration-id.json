@@ -1,0 +1,8 @@
+{
+  "id": "configuration/request/mapping-by-configuration-id",
+  "domain": "configuration",
+  "contract": "request.mapping.by.configuration-id",
+  "role": "REQUEST",
+  "description": "Requesten er en bar Long. Denne kontrakten MÅ BESTÅ etter sammenslåingen - mapping-service er klient, og skal ikke måtte bygges eller deployes på nytt.",
+  "payload": 1
+}

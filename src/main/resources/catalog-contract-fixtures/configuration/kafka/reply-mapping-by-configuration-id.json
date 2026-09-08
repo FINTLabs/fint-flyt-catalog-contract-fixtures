@@ -1,0 +1,48 @@
+{
+  "id": "configuration/reply/mapping-by-configuration-id",
+  "domain": "configuration",
+  "contract": "request.mapping.by.configuration-id",
+  "role": "REPLY",
+  "description": "Svaret er mapping-treet alene - ObjectMappingDto, ikke konfigurasjonen som omslutter det. Alle fire kartene er alltid med, også de tomme: de har tom map som default framfor null, så de utelates aldri fra payloaden. Formen er kontrakten mapping-service leser.",
+  "payload": {
+    "valueMappingPerKey": {
+      "tittel": {
+        "type": "STRING",
+        "mappingString": "Sakstittel"
+      }
+    },
+    "valueCollectionMappingPerKey": {
+      "vedlegg": {
+        "elementMappings": [
+          {
+            "type": "FILE",
+            "mappingString": "$if{...}"
+          }
+        ],
+        "fromCollectionMappings": [
+          {
+            "instanceCollectionReferencesOrdered": ["dokumenter"],
+            "elementMapping": {
+              "type": "DYNAMIC_STRING",
+              "mappingString": "$if{dokument.navn}"
+            }
+          }
+        ]
+      }
+    },
+    "objectMappingPerKey": {
+      "avsender": {
+        "valueMappingPerKey": {
+          "navn": {
+            "type": "STRING",
+            "mappingString": "Ola Nordmann"
+          }
+        },
+        "valueCollectionMappingPerKey": {},
+        "objectMappingPerKey": {},
+        "objectCollectionMappingPerKey": {}
+      }
+    },
+    "objectCollectionMappingPerKey": {}
+  }
+}

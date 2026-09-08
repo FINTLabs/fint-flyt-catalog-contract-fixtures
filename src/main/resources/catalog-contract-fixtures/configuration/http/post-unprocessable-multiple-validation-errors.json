@@ -1,0 +1,38 @@
+{
+  "id": "configuration/post/unprocessable-multiple-validation-errors",
+  "domain": "configuration",
+  "surface": "POST /api/intern/konfigurasjoner",
+  "description": "Flere feil gir flertall - 'Validation errors:' - og listen er sortert alfabetisk, ikke i den rekkefølgen valideringen fant dem. Sorteringen er det som gjør meldingen deterministisk, og er derfor del av kontrakten.",
+  "request": {
+    "method": "POST",
+    "path": "/api/intern/konfigurasjoner",
+    "body": {
+      "integrationId": 10,
+      "integrationMetadataId": 100,
+      "completed": false,
+      "mapping": {
+        "valueMappingPerKey": {
+          "tittel": {
+            "type": null,
+            "mappingString": null
+          }
+        },
+        "valueCollectionMappingPerKey": {},
+        "objectMappingPerKey": {},
+        "objectCollectionMappingPerKey": {}
+      }
+    }
+  },
+  "expectedResponse": {
+    "status": 422,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 422,
+      "error": "Unprocessable Entity",
+      "message": "Validation errors: ['mapping.valueMappingPerKey[tittel].mappingString must not be null', 'mapping.valueMappingPerKey[tittel].type must not be null']",
+      "path": "/api/intern/konfigurasjoner",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}

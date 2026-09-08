@@ -1,0 +1,8 @@
+{
+  "id": "configuration/reply/mapping-by-configuration-id-not-found",
+  "domain": "configuration",
+  "contract": "request.mapping.by.configuration-id",
+  "role": "REPLY",
+  "description": "Ukjent konfigurasjon gir tom payload. Merk at en konfigurasjon UTEN mapping gir det samme - findById(...)?.mapping er null i begge tilfeller, og klienten kan ikke skille dem fra hverandre.",
+  "payload": null
+}

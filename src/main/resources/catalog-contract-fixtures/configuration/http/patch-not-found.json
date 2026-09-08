@@ -1,0 +1,25 @@
+{
+  "id": "configuration/patch/not-found",
+  "domain": "configuration",
+  "surface": "PATCH /api/intern/konfigurasjoner/{id}",
+  "description": "Ukjent id gir 404 før noe endres. PATCH oppretter ikke konfigurasjonen.",
+  "request": {
+    "method": "PATCH",
+    "path": "/api/intern/konfigurasjoner/123",
+    "body": {
+      "comment": "Nytt forsøk"
+    }
+  },
+  "expectedResponse": {
+    "status": 404,
+    "contentType": "application/json",
+    "ignoredPaths": ["$.timestamp"],
+    "body": {
+      "status": 404,
+      "error": "Not Found",
+      "message": "404 NOT_FOUND",
+      "path": "/api/intern/konfigurasjoner/123",
+      "timestamp": "2026-01-15T09:00:00Z"
+    }
+  }
+}
