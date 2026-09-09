@@ -4,7 +4,7 @@ Delte kontraktsfixtures for katalogdomenet i FLYT: `configuration`, `integration
 `value-converting`.
 
 Et sett med request/response-par for HTTP og payloads for Kafka, som både de fire eksisterende
-tjenestene og `fint-flyt-integration-configuration-service` kjører sine tester mot. Samme tilfeller,
+tjenestene og `fint-flyt-intgr-conf-service` kjører sine tester mot. Samme tilfeller,
 samme forventede utfall — slik at et avvik mellom gammel og ny tjeneste fanges i test framfor i
 drift.
 
@@ -175,7 +175,7 @@ Det er tilfellet for oppslag som ikke finner noen rad, og klientene må tåle de
 2. Kjør testen i den gamle tjenesten. Den skal bli grønn uten at produksjonskode endres. Blir den
    ikke det, er det fixturen som er feil.
 3. `./gradlew check` her, som verifiserer at fixturen laster og er velformet.
-4. Speil testen i `fint-flyt-integration-configuration-service` når domenet flyttes.
+4. Speil testen i `fint-flyt-intgr-conf-service` når domenet flyttes.
 
 Ingen fixture skal inneholde data fra en ekte tenant. Repoet er offentlig, og fixturene er
 syntetiske.
