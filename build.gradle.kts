@@ -22,9 +22,9 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     id("maven-publish")
     id("java-library")
-    id("io.github.ben-manes.versions") version "0.61.0"
+    id("io.github.ben-manes.versions") version "0.64.0"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
-    kotlin("jvm") version "2.4.10"
+    kotlin("jvm") version "2.4.20"
 }
 
 private val kotlinVersion = "2.4.10"
