@@ -7,7 +7,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath(platform("com.fasterxml.jackson:jackson-bom:2.22.3"))
+        classpath(platform("com.fasterxml.jackson:jackson-bom:2.22.4"))
         constraints {
             classpath("org.apache.httpcomponents.client5:httpclient5:5.6.5")
             classpath("org.apache.httpcomponents.core5:httpcore5:5.4.4")
@@ -30,7 +30,7 @@ plugins {
 private val kotlinVersion = "2.4.10"
 extra["kotlin.version"] = kotlinVersion
 extra["commons-lang3.version"] = "3.21.0"
-extra["jackson-bom.version"] = "2.22.3"
+extra["jackson-bom.version"] = "2.22.4"
 extra["log4j2.version"] = "2.26.1"
 extra["tomcat.version"] = "10.1.59"
 
