@@ -3,6 +3,7 @@ import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 buildscript {
+    configurations.classpath { resolutionStrategy.activateDependencyLocking() }
     repositories {
         gradlePluginPortal()
     }
@@ -56,6 +57,10 @@ dependencyManagement {
     imports {
         mavenBom(SpringBootPlugin.BOM_COORDINATES)
     }
+}
+
+dependencyLocking {
+    lockAllConfigurations()
 }
 
 dependencies {
