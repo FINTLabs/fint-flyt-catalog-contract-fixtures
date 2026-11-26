@@ -29,7 +29,7 @@
     "ignoredPaths": ["$.timestamp"],
     "body": {
       "status": 422,
-      "error": "Unprocessable Entity",
+      "error": "Unprocessable Content",
       "message": "Could not find integration with id=999",
       "path": "/api/intern/konfigurasjoner",
       "timestamp": "2026-01-15T09:00:00Z"

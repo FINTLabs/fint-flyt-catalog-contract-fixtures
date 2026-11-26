@@ -25,11 +25,9 @@
     "status": 400,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Bad Request",
       "status": 400,
-      "detail": "Validation error: 'sortProperty' must be one of createdAt, createdBy, displayName, fromApplicationId, fromTypeId, id, modifiedAt, modifiedBy, sourceApplicationIds, toApplicationId, toTypeId",
-      "instance": "/api/intern/value-convertings"
+      "detail": "Validation error: 'sortProperty' must be one of createdAt, createdBy, displayName, fromApplicationId, fromTypeId, id, modifiedAt, modifiedBy, sourceApplicationIds, toApplicationId, toTypeId"
     }
   }
 }

@@ -29,7 +29,7 @@
     "ignoredPaths": ["$.timestamp"],
     "body": {
       "status": 422,
-      "error": "Unprocessable Entity",
+      "error": "Unprocessable Content",
       "message": "Validation errors: ['mapping.valueMappingPerKey[tittel].mappingString must not be null', 'mapping.valueMappingPerKey[tittel].type must not be null']",
       "path": "/api/intern/konfigurasjoner",
       "timestamp": "2026-01-15T09:00:00Z"

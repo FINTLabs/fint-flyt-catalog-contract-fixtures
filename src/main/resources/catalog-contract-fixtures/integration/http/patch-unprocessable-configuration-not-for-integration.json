@@ -14,11 +14,9 @@
     "status": 422,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
-      "title": "Unprocessable Entity",
+      "title": "Unprocessable Content",
       "status": 422,
-      "detail": "Validation error: ['activeConfigurationId referenced configuration is not for this integration']",
-      "instance": "/api/intern/integrasjoner/1"
+      "detail": "Validation error: ['activeConfigurationId referenced configuration is not for this integration']"
     }
   }
 }

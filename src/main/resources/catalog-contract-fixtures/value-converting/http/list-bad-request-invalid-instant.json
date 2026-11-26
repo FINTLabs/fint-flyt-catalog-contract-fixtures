@@ -22,11 +22,9 @@
     "status": 400,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Bad Request",
       "status": 400,
-      "detail": "Invalid value for request parameter 'createdAtFrom'",
-      "instance": "/api/intern/value-convertings"
+      "detail": "Invalid value for request parameter 'createdAtFrom'"
     }
   }
 }

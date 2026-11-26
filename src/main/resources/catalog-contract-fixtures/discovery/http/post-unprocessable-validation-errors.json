@@ -22,11 +22,9 @@
     "status": 422,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
-      "title": "Unprocessable Entity",
+      "title": "Unprocessable Content",
       "status": 422,
-      "detail": "Validation errors: ['integrationDisplayName must not be blank', 'sourceApplicationIntegrationId must not be blank', 'version must not be null']",
-      "instance": "/api/intern/metadata"
+      "detail": "Validation errors: ['integrationDisplayName must not be blank', 'sourceApplicationIntegrationId must not be blank', 'version must not be null']"
     }
   }
 }

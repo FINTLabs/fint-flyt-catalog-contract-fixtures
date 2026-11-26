@@ -14,11 +14,9 @@
     "status": 422,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
-      "title": "Unprocessable Entity",
+      "title": "Unprocessable Content",
       "status": 422,
-      "detail": "Validation errors: ['activeConfigurationId referenced configuration could not be found', 'state is cannot be set to ACTIVE without an active configuration']",
-      "instance": "/api/intern/integrasjoner/1"
+      "detail": "Validation errors: ['activeConfigurationId referenced configuration could not be found', 'state is cannot be set to ACTIVE without an active configuration']"
     }
   }
 }

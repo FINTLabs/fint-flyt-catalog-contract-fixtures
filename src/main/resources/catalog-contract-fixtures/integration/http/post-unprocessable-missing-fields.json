@@ -16,11 +16,9 @@
     "status": 422,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
-      "title": "Unprocessable Entity",
+      "title": "Unprocessable Content",
       "status": 422,
-      "detail": "Validation errors: ['destination must not be blank', 'sourceApplicationId must not be null', 'sourceApplicationIntegrationId must not be blank']",
-      "instance": "/api/intern/integrasjoner"
+      "detail": "Validation errors: ['destination must not be blank', 'sourceApplicationId must not be null', 'sourceApplicationIntegrationId must not be blank']"
     }
   }
 }

@@ -66,7 +66,7 @@ be unique across the whole set.
   "expectedResponse": {
     "status": 404,
     "contentType": "application/problem+json",
-    "body": { "type": "about:blank", "title": "Not Found", "status": 404, "detail": "..." }
+    "body": { "title": "Not Found", "status": 404, "detail": "..." }
   }
 }
 ```
