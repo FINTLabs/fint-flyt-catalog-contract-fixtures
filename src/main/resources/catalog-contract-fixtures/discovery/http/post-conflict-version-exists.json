@@ -24,11 +24,9 @@
     "status": 409,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Conflict",
       "status": 409,
-      "detail": "Version already exists",
-      "instance": "/api/intern/metadata"
+      "detail": "Version already exists"
     }
   }
 }

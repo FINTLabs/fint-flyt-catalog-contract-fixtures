@@ -1,7 +1,7 @@
 package no.novari.flyt.catalog.contract.fixtures
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.databind.JsonNode
+import tools.jackson.databind.JsonNode
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class HttpContractFixture(

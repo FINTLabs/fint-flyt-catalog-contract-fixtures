@@ -16,10 +16,8 @@
     "status": 403,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Forbidden",
-      "status": 403,
-      "instance": "/api/intern/integrasjoner"
+      "status": 403
     }
   }
 }

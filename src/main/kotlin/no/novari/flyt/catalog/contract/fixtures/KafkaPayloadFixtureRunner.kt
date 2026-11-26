@@ -1,10 +1,10 @@
 package no.novari.flyt.catalog.contract.fixtures
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.node.NullNode
 import org.junit.jupiter.api.Assertions.assertNull
 import org.skyscreamer.jsonassert.JSONAssert
 import org.skyscreamer.jsonassert.JSONCompareMode
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.databind.node.NullNode
 
 class KafkaPayloadFixtureRunner(
     private val objectMapper: ObjectMapper = FixtureObjectMapper.springBoot(),

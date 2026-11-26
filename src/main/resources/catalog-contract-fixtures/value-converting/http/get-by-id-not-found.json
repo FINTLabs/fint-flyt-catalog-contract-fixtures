@@ -11,11 +11,9 @@
     "status": 404,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Not Found",
       "status": 404,
-      "detail": "Value conversion with id=123 was not found",
-      "instance": "/api/intern/value-convertings/123"
+      "detail": "Value conversion with id=123 was not found"
     }
   }
 }

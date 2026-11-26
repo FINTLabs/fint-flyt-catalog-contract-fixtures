@@ -16,11 +16,9 @@
     "status": 400,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Bad Request",
       "status": 400,
-      "detail": "Validation error: 'page' is required",
-      "instance": "/api/intern/value-convertings"
+      "detail": "Validation error: 'page' is required"
     }
   }
 }

@@ -1,6 +1,5 @@
 package no.novari.flyt.catalog.contract.fixtures
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.skyscreamer.jsonassert.JSONAssert
 import org.skyscreamer.jsonassert.JSONCompareMode
@@ -10,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.MvcResult
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+import tools.jackson.databind.ObjectMapper
 import java.nio.charset.StandardCharsets
 
 class HttpContractFixtureRunner(

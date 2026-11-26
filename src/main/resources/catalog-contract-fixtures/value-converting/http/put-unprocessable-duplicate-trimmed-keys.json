@@ -22,11 +22,9 @@
     "status": 422,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
-      "title": "Unprocessable Entity",
+      "title": "Unprocessable Content",
       "status": 422,
-      "detail": "Validation error: convertingMap contains duplicate keys after trimming",
-      "instance": "/api/intern/value-convertings/1"
+      "detail": "Validation error: convertingMap contains duplicate keys after trimming"
     }
   }
 }

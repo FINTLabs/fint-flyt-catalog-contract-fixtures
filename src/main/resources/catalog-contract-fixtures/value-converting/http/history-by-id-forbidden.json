@@ -11,11 +11,9 @@
     "status": 403,
     "contentType": "application/problem+json",
     "body": {
-      "type": "about:blank",
       "title": "Forbidden",
       "status": 403,
-      "detail": "You do not have permission to access or modify data that is related to source application with id=3",
-      "instance": "/api/intern/value-convertings/5/history"
+      "detail": "You do not have permission to access or modify data that is related to source application with id=3"
     }
   }
 }
