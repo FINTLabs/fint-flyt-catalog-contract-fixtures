@@ -1,9 +1,9 @@
 package no.novari.flyt.catalog.contract.fixtures
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.module.kotlin.readValue
 
 object CatalogContractFixtures {
     private const val ROOT = "catalog-contract-fixtures"
